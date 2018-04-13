@@ -71,7 +71,7 @@ describe 'Neo feed spec' do
     end
 
     it 'should have a miss_distance hash containing astronomical, lunar, kilometers,
-    miles keys, that return floats' do
+    miles keys, that return strings' do
       # expect(@neo_feed.print_results).to eq 2
       pending
     end
