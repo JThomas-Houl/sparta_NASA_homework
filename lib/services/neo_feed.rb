@@ -18,4 +18,19 @@ class NeoFeedService
     puts JSON.pretty_generate(@nasa_feed).gsub(":", " =>")
   end
 
+  def get_hash
+    @nasa_feed
+  end
+  
+  def get_neo_reference_id
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['neo_reference_id']
+  end
+
+  def get_near_earth_objects_hash
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]
+  end
+
+  def get_estimated_diameter_hash
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']
+  end
 end 
