@@ -53,9 +53,8 @@ describe 'Neo feed spec' do
     end
 
     it 'should have a is_potentially_hazardous_asteroid key which returns true or false' do
-      # @neo_feed.get_near_earth_objects_hash['is_potentially_hazardous_asteroid'] => true
-      pending
-      # expect(@neo_feed.get_near_earth_objects_hash['is_potentially_hazardous_asteroid']).to be true
+      expect(@neo_feed.get_near_earth_objects_hash['is_potentially_hazardous_asteroid']).to be false
+      expect(@neo_feed.get_near_earth_objects_hash['is_potentially_hazardous_asteroid']).should_not be true
     end
 
     it 'should have a close_approach_data array' do
