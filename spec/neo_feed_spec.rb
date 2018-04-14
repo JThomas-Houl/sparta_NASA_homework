@@ -39,13 +39,18 @@ describe 'Neo feed spec' do
     end
 
     it 'should have a estimated_diameter_min float smaller then estimated_diameter_max' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_feed.get_estimated_diameter_kilometers['estimated_diameter_min']).to be < @neo_feed.get_estimated_diameter_kilometers['estimated_diameter_max']
+      expect(@neo_feed.get_estimated_diameter_feet['estimated_diameter_min']).to be < @neo_feed.get_estimated_diameter_feet['estimated_diameter_max']
+      expect(@neo_feed.get_estimated_diameter_miles['estimated_diameter_min']).to be < @neo_feed.get_estimated_diameter_miles['estimated_diameter_max']
+      expect(@neo_feed.get_estimated_diameter_meters['estimated_diameter_min']).to be < @neo_feed.get_estimated_diameter_meters['estimated_diameter_max']
     end
 
     it 'should have a estimated_diameter_max float larger then estimated_diameter_min' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_feed.get_estimated_diameter_kilometers['estimated_diameter_max']).to be > @neo_feed.get_estimated_diameter_kilometers['estimated_diameter_min']
+      expect(@neo_feed.get_estimated_diameter_feet['estimated_diameter_max']).to be > @neo_feed.get_estimated_diameter_feet['estimated_diameter_min']
+      expect(@neo_feed.get_estimated_diameter_miles['estimated_diameter_max']).to be > @neo_feed.get_estimated_diameter_miles['estimated_diameter_min']
+      expect(@neo_feed.get_estimated_diameter_meters['estimated_diameter_max']).to be > @neo_feed.get_estimated_diameter_meters['estimated_diameter_min']
+
     end
 
     it 'should have a is_potentially_hazardous_asteroid key which returns true or false' do

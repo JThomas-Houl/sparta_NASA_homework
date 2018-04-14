@@ -33,4 +33,20 @@ class NeoFeedService
   def get_estimated_diameter_hash
     @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']
   end
+
+  def get_estimated_diameter_kilometers
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']['kilometers']
+  end
+
+  def get_estimated_diameter_meters
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']['meters']
+  end
+
+  def get_estimated_diameter_feet
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']['feet']
+  end
+
+  def get_estimated_diameter_miles
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']['miles']
+  end
 end 
