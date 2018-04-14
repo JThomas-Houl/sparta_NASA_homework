@@ -29,7 +29,7 @@ class NeoFeedService
   def get_near_earth_objects_hash
     @nasa_feed['near_earth_objects']['2018-04-12'][1]
   end
-
+ 
   def get_estimated_diameter_hash
     @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']
   end
@@ -48,5 +48,21 @@ class NeoFeedService
 
   def get_estimated_diameter_miles
     @nasa_feed['near_earth_objects']['2018-04-12'][1]['estimated_diameter']['miles']
+  end
+  
+  def get_relative_velocity
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['close_approach_data'][0]['relative_velocity']
+  end
+
+  def get_miss_distance
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['close_approach_data'][0]['miss_distance']
+  end
+
+  def get_orbiting_body
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['close_approach_data'][0]['orbiting_body']
+  end
+
+  def get_close_approach_data
+    @nasa_feed['near_earth_objects']['2018-04-12'][1]['close_approach_data'][0]
   end
 end 

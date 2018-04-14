@@ -50,40 +50,43 @@ describe 'Neo feed spec' do
       expect(@neo_feed.get_estimated_diameter_feet['estimated_diameter_max']).to be > @neo_feed.get_estimated_diameter_feet['estimated_diameter_min']
       expect(@neo_feed.get_estimated_diameter_miles['estimated_diameter_max']).to be > @neo_feed.get_estimated_diameter_miles['estimated_diameter_min']
       expect(@neo_feed.get_estimated_diameter_meters['estimated_diameter_max']).to be > @neo_feed.get_estimated_diameter_meters['estimated_diameter_min']
-
     end
 
     it 'should have a is_potentially_hazardous_asteroid key which returns true or false' do
-      # expect(@neo_feed.print_results).to eq 2
+      # @neo_feed.get_near_earth_objects_hash['is_potentially_hazardous_asteroid'] => true
       pending
+      # expect(@neo_feed.get_near_earth_objects_hash['is_potentially_hazardous_asteroid']).to be true
     end
 
     it 'should have a close_approach_data array' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_feed.get_near_earth_objects_hash['close_approach_data']).to be_a(Array)
     end
 
     it 'should have a relative_velocity hash containing kilometers_per_second,
     kilometers_per_hour, miles_per_hour' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_feed.get_relative_velocity).to include('kilometers_per_second')
+      expect(@neo_feed.get_relative_velocity).to include('kilometers_per_hour')
+      expect(@neo_feed.get_relative_velocity).to include('miles_per_hour')
     end
 
     it 'should have a kilometers_per_second, kilometers_per_hour, miles_per_hour keys which 
-    return floats' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+    return strings' do
+      @neo_feed.get_relative_velocity.each do |k, v|
+        expect(@neo_feed.get_relative_velocity[k][v]).to be_a(String)
+      end 
     end
 
     it 'should have a miss_distance hash containing astronomical, lunar, kilometers,
     miles keys, that return strings' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+    expect(@neo_feed.get_miss_distance).to be_a(Hash)
+    expect(@neo_feed.get_miss_distance).to include('astronomical')
+    expect(@neo_feed.get_miss_distance).to include('lunar')
+    expect(@neo_feed.get_miss_distance).to include('kilometers')
+    expect(@neo_feed.get_miss_distance).to include('miles')
     end
 
     it 'should have an orbiting_body key which returns a string' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_feed.get_orbiting_body).to be_a(String)
     end
   end
 end
