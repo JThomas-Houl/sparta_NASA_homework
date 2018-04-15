@@ -8,6 +8,8 @@ The tests consume the NASA API portal, testing their three different services:
 -	Neo Lookup
 -	Neo Browse
 
+In a three day sprint of testing 82% test coverage was achieved, resulting in 50 examples 9 failures.
+
 ## Getting started
 Clone the repository to your computer. The rspec gem should be included with base Ruby. Check the rspec [documentation](https://relishapp.com/rspec/rspec-expectations/docs/built-in-matchers).
 
