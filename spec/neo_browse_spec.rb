@@ -12,7 +12,7 @@ describe 'Neo browse spec' do
 
 
     it 'should have a links hash' do
-      expect(@neo_browse.get_hash['links']).to be_a(Hash)   
+      expect(@neo_browse.get_links_hash).to be_a(Hash)   
     end 
 
     it 'should have a page hash containing 4 keys all returing integers' do
@@ -70,28 +70,24 @@ describe 'Neo browse spec' do
     end
 
     it 'should have a is_potentially_hazardous_asteroid key which returns true or false' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_browse.get_is_potentially_hazardous_asteroid).to be false
+      expect(@neo_browse.get_is_potentially_hazardous_asteroid).should_not be false
     end
 
     it 'should have a close_approach_data array' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_browse.get_close_approach_data_array).to be_a(Array)
     end
 
     it 'should have an orbiting_body key which returns a string' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      expect(@neo_browse.get_orbiting_body).to be_a(String)
     end
 
-    it 'should have an orbital_id containing a string' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+    it 'should have an orbit_id containing a string' do
+      expect(@neo_browse.get_orbit_id).to be_a(String)
     end
 
     it 'should have an orbit_determination_date containing a string' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+       expect(@neo_browse.get_orbit_determination_date).to be_a(String)
     end
     
     it 'should have an orbital_data contain 18 keys' do
