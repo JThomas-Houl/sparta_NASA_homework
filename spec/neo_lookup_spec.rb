@@ -12,35 +12,31 @@ describe 'Neo look up spec' do
         end
 
 
-        it 'should have a links is a hash' do
-            # expect(@neo_feed.print_results).to eq 2
-            pending
+        it 'should have a links is a hash' do   
+            expect(@neo_lookup.get_links_hash).to be_a(Hash)
         end 
 
-        it 'should have a neo_reference_id key containing a string of 7 charectors' do
-            # expect(@neo_feed.print_results).to eq 2
-            pending
+        it 'should have a neo_referance_id key containing a string of 7 charectors' do
+            expect(@neo_lookup.get_neo_referance_id.length).to eq 7
         end
           
         it 'should have a name key containing a string' do
-            # expect(@neo_feed.print_results).to eq 2
-            pending
+            expect(@neo_lookup.get_name_key).to be_a(String)
         end
       
         it 'should have a nasa_jpl_url key containing a http string' do
-            # expect(@neo_feed.print_results).to eq 2
-            pending
+            expect(@neo_lookup.get_nasa_jpl_url).to be_a(String) and include('http')
         end 
 
         it 'should have a absolute_magnitude_h key containing float' do
-            # expect(@neo_feed.print_results).to eq 2
-        pending
+            expect(@neo_lookup.get_absolute_magnitude_h).to be_a(Float)
         end
     
         it 'should have a estimated_diameter hash containing a 3 keys labelded kilometers,
         meters, miles, feet' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+            expect(@neo_lookup.get_estimated_diameter).to be_a(Hash)
+            expect(@neo_lookup.get_estimated_diameter.keys.each).to include('kilometers',
+                'meters', 'miles', 'feet')
         end
     
         it 'should have a estimated_diameter_min float smaller then estimated_diameter_max' do
