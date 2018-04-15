@@ -9,7 +9,6 @@ class NeoLookUpService
   def initialize
     @api_key = 'kcO5eqbhy64BiIF115BRdAezsIZ0uT5jzHD0prED'
     @relative_velocity_boolean = true
-    @nasa_lookup = JSON.parse(self.class.get("/#{look_up_id}?api_key=#{@api_key}").body)
     
   end
 
@@ -71,7 +70,7 @@ class NeoLookUpService
   
   def get_relative_velocity_boolean
 
-    if @nasa_lookup['relative_velocity'].length == 3
+    if @nasa_lookup['relative_velocity'] == true
       @nasa_lookup['relative_velocity'].keys.each do |i|
         @nasa_look['relative_velocity'][i].include('kilometers_per_second', 'kilometers_per_hour','miles_per_hour')
         @relative_velocity_boolean
