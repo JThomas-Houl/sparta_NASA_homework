@@ -25,4 +25,12 @@ class NeoBrowseService
   def get_page_hash
     @nasa_browse['page']
   end 
+
+  def get_near_earth_objects_array
+    @nasa_browse['near_earth_objects']
+  end 
+
+  def get_neo_referance_id
+    @nasa_browse['near_earth_objects'][0]['neo_reference_id']
+  end 
 end

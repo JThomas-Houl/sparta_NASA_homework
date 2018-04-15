@@ -77,11 +77,11 @@ describe 'Neo feed spec' do
 
     it 'should have a miss_distance hash containing astronomical, lunar, kilometers,
     miles keys, that return strings' do
-    expect(@neo_feed.get_miss_distance).to be_a(Hash)
-    expect(@neo_feed.get_miss_distance).to include('astronomical')
-    expect(@neo_feed.get_miss_distance).to include('lunar')
-    expect(@neo_feed.get_miss_distance).to include('kilometers')
-    expect(@neo_feed.get_miss_distance).to include('miles')
+      expect(@neo_feed.get_miss_distance).to be_a(Hash)
+      expect(@neo_feed.get_miss_distance).to include('astronomical')
+      expect(@neo_feed.get_miss_distance).to include('lunar')
+      expect(@neo_feed.get_miss_distance).to include('kilometers')
+      expect(@neo_feed.get_miss_distance).to include('miles')
     end
 
     it 'should have an orbiting_body key which returns a string' do
