@@ -39,14 +39,16 @@ describe 'Neo look up spec' do
                 'meters', 'miles', 'feet')
         end
     
-        it 'should have a estimated_diameter_min float smaller then estimated_diameter_max' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+        it 'should have a estimated_diameter_min float equal or less than  estimated_diameter_max' do
+            @neo_lookup.get_estimated_diameter.keys.each do |i|
+                expect(@neo_lookup.get_estimated_diameter[i]['estimated_diameter_min']).to be <=  @neo_lookup.get_estimated_diameter[i]['estimated_diameter_max']
+            end
         end
     
-        it 'should have a estimated_diameter_max float larger then estimated_diameter_min' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+        it 'should have a estimated_diameter_max float  equal or less than estimated_diameter_min' do
+            @neo_lookup.get_estimated_diameter.keys.each do |i|
+                expect(@neo_lookup.get_estimated_diameter[i]['estimated_diameter_max']).to be >=  @neo_lookup.get_estimated_diameter[i]['estimated_diameter_min']
+            end
         end
     
         it 'should have a is_potentially_hazardous_asteroid key which returns true or false' do
