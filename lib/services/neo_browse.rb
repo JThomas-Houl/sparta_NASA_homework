@@ -33,4 +33,21 @@ class NeoBrowseService
   def get_neo_referance_id
     @nasa_browse['near_earth_objects'][0]['neo_reference_id']
   end 
+
+  def get_name_key
+    @nasa_browse['near_earth_objects'][0]['name']
+  end
+    
+  def get_nasa_jpl_url
+    @nasa_browse['near_earth_objects'][0]['nasa_jpl_url']
+  end
+    
+  def get_absolute_magnitude_h
+    @nasa_browse['near_earth_objects'][0]['absolute_magnitude_h']
+  end
+    
+  def get_estimated_diameter
+    @nasa_browse['near_earth_objects'][0]['estimated_diameter']
+  end
+
 end
