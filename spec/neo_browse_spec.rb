@@ -87,17 +87,17 @@ describe 'Neo browse spec' do
     end
 
     it 'should have an orbit_determination_date containing a string' do
-       expect(@neo_browse.get_orbit_determination_date).to be_a(String)
+      expect(@neo_browse.get_orbit_determination_date).to be_a(String)
     end
     
     it 'should have an orbital_data contain 18 keys' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+      expect(@neo_browse.get_orbital_data.keys.count).to eq 18
     end
 
     it 'should have an orbital_data hash with every key containing string data' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+      @neo_browse.get_orbital_data.keys.each do |i|
+        expect(@neo_browse.get_orbital_data[i]).to be_a(String)
+      end
     end
   end
 end
