@@ -8,10 +8,13 @@ class NeoLookUpService
 
   def initialize
     @api_key = 'kcO5eqbhy64BiIF115BRdAezsIZ0uT5jzHD0prED'
+    @relative_velocity_boolean = true
+    @nasa_lookup = JSON.parse(self.class.get("/#{look_up_id}?api_key=#{@api_key}").body)
+    
   end
 
   def get_lookup_with_id(look_up_id)
-    @nasa_lookup= JSON.parse(self.class.get("/#{look_up_id}?api_key=#{@api_key}").body)
+    @nasa_lookup = JSON.parse(self.class.get("/#{look_up_id}?api_key=#{@api_key}").body)
   end
 
   def print_results
@@ -55,17 +58,28 @@ class NeoLookUpService
   end
   
   def get_is_potentially_hazardous_asteroid
-    @nasa_lookup['near_earth_objects'][0]['is_potentially_hazardous_asteroid']
+    @nasa_lookup['is_potentially_hazardous_asteroid']
   end
 
   def get_close_approach_data_array
-    @nasa_lookup['near_earth_objects'][0]['close_approach_data']
+    @nasa_lookup['close_approach_data']
   end
 
-  def get_orbiting_body
-    @nasa_lookup['near_earth_objects'][1]['close_approach_data'][0]['orbiting_body']
+  def get_relative_velocity
+    @nasa_lookup['relative_velocity']
   end
   
+  def get_relative_velocity_boolean
+
+    if @nasa_lookup['relative_velocity'].length == 3
+      @nasa_lookup['relative_velocity'].keys.each do |i|
+        @nasa_look['relative_velocity'][i].include('kilometers_per_second', 'kilometers_per_hour','miles_per_hour')
+        @relative_velocity_boolean
+      end
+      @relative_velocity_boolean
+    end
+  end
+
   def get_orbital_data
     @nasa_lookup['near_earth_objects'][1]['orbital_data']
   end

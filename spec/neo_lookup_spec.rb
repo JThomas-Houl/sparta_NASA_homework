@@ -52,19 +52,16 @@ describe 'Neo look up spec' do
         end
     
         it 'should have a is_potentially_hazardous_asteroid key which returns true or false' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+            expect(@neo_lookup.get_is_potentially_hazardous_asteroid).to be false and should_not be true
         end
     
         it 'should have a close_approach_data array' do
-        # expect(@neo_feed.print_results).to eq 2
-        pending
+            expect(@neo_lookup.get_close_approach_data_array).to be_a(Array)
         end
 
         it 'should have a relative_velocity hash containing kilometers_per_second,
         kilometers_per_hour, miles_per_hour' do
-          # expect(@neo_feed.print_results).to eq 2
-          pending
+          expect(@neo_lookup.get_relative_velocity_boolean).to eq true
         end
     
         it 'should have a kilometers_per_second, kilometers_per_hour, miles_per_hour keys which 
