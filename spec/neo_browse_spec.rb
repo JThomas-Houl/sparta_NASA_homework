@@ -46,23 +46,27 @@ describe 'Neo browse spec' do
     end
 
     it 'should have a estimated_diameter hash containing a 4 keys labelded kilometers,
-    meters, miles, feet.' do
+    meters, miles, feet. Which return floats' do
       expect(@neo_browse.get_estimated_diameter).to be_a(Hash)
       expect(@neo_browse.get_estimated_diameter.keys.count).to eq 4
       
-      @neo_browse.get_estimated_diameter.each do |k,i|
-        expect(@neo_browse.get_estimated_diameter.keys).to include('kilometers','meters','miles','feet')
+      @neo_browse.get_estimated_diameter.keys.each do |k|
+        expect(@neo_browse.get_estimated_diameter).to include('kilometers','meters','miles','feet')
+        expect(@neo_browse.get_estimated_diameter[k]['estimated_diameter_min']).to be_a(Float)
+        expect(@neo_browse.get_estimated_diameter[k]['estimated_diameter_max']).to be_a(Float)
       end
     end
 
     it 'should have a estimated_diameter_min float smaller then estimated_diameter_max' do
-      # @neo_browse.get_estimated_diameter.each do |
-      pending
+      @neo_browse.get_estimated_diameter.keys.each do |v|
+        expect(@neo_browse.get_estimated_diameter[v]['estimated_diameter_min']).to be < @neo_browse.get_estimated_diameter[v]['estimated_diameter_max']
+      end
     end
 
     it 'should have a estimated_diameter_max float larger then estimated_diameter_min' do
-      # expect(@neo_feed.print_results).to eq 2
-      pending
+      @neo_browse.get_estimated_diameter.keys.each do |v|
+        expect(@neo_browse.get_estimated_diameter[v]['estimated_diameter_max']).to be > @neo_browse.get_estimated_diameter[v]['estimated_diameter_min']
+      end
     end
 
     it 'should have a is_potentially_hazardous_asteroid key which returns true or false' do
