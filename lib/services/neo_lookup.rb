@@ -65,22 +65,23 @@ class NeoLookUpService
   end
 
   def get_relative_velocity
-    @nasa_lookup['relative_velocity']
+    @nasa_lookup['close_approach_data'][1]['relative_velocity']
   end
-  
-  def get_relative_velocity_boolean
 
-    if @nasa_lookup['relative_velocity'] == true
-      @nasa_lookup['relative_velocity'].keys.each do |i|
-        @nasa_look['relative_velocity'][i].include('kilometers_per_second', 'kilometers_per_hour','miles_per_hour')
-        @relative_velocity_boolean
+  def get_relative_velocity_boolean
+    if @nasa_lookup['close_approach_data'][0]['relative_velocity'].length == 3
+      @nasa_lookup['close_approach_data'][0]['relative_velocity'].each do |i|
       end
-      @relative_velocity_boolean
     end
   end
 
+  
   def get_orbital_data
     @nasa_lookup['near_earth_objects'][1]['orbital_data']
+  end
+
+  def get_miss_distance
+    @nasa_lookup['miss_distance']
   end
 
   def get_orbit_id

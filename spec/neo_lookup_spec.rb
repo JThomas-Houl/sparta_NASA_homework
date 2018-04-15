@@ -9,6 +9,8 @@ describe 'Neo look up spec' do
             @neo_lookup = Nasa.new.neo_lookup
             @spk_ids = ["2000433","2000719","2000887","2001036","2001221"]
             @neo_lookup.get_lookup_with_id(@spk_ids[0])
+            @relative_velocity_speeds = ['kilometers_per_second',
+            'kilometers_per_hour', 'miles_per_hour']
         end
 
 
@@ -61,7 +63,9 @@ describe 'Neo look up spec' do
 
         it 'should have a relative_velocity hash containing kilometers_per_second,
         kilometers_per_hour, miles_per_hour' do
-          expect(@neo_lookup.get_relative_velocity_boolean).to eq true
+            # expect(@neo_Lookup.get_relative_velocity).to be_a(Hash)
+        
+        pending
         end
     
         it 'should have a kilometers_per_second, kilometers_per_hour, miles_per_hour keys which 
@@ -72,37 +76,33 @@ describe 'Neo look up spec' do
     
         it 'should have a miss_distance hash containing astronomical, lunar, kilometers,
         miles keys, that return strings' do
-          # expect(@neo_feed.print_results).to eq 2
+        #   expect(@neo_lookup.get_miss_distance).to be_a(Hash)
+            # @neo_look
           pending
+          
         end
 
         it 'should have an orbiting_body key which returns a string' do
-            # expect(@neo_feed.print_results).to eq 2
             pending
         end
 
         it 'should have an orbital_data hash' do
-            # expect(@neo_feed.print_results).to eq 2
             pending
         end
 
         it 'should have an orbital_id containing a string' do
-            # expect(@neo_feed.print_results).to eq 2
             pending
         end
 
         it 'should have an orbit_determination_date containing a string' do
-            # expect(@neo_feed.print_results).to eq 2
             pending
         end
         
         it 'should have an orbital_data contain 18 keys' do
-            # expect(@neo_feed.print_results).to eq 2
             pending
         end
 
         it 'should have an orbital_data hash with every key containing string data' do
-            # expect(@neo_feed.print_results).to eq 2
             pending
         end
         
