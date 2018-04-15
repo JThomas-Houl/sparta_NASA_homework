@@ -13,13 +13,15 @@ describe 'Neo browse spec' do
 
 
     it 'should have a links hash' do
-        # expect(@neo_browse.print_results).to be 2
-        pending
+        expect(@neo_browse.get_hash['links']).to be_a(Hash)
+        
     end 
 
     it 'should have a page hash containing 4 keys all returing integers' do
-        # expect(@neo_browse.print_results).to be 2
-        pending
+        expect(@neo_browse.get_page_hash.keys.count).to eq 4
+        @neo_browse.get_page_hash.each do |k,v|
+          expect(@neo_browse.get_page_hash[[v]).to be_a(Integer)
+        end
     end 
 
     it 'should have a near_earth_objects hash' do

@@ -18,5 +18,11 @@ class NeoBrowseService
     puts JSON.pretty_generate(@nasa_browse).gsub(":", " =>") #makes it look pretty for me
   end
 
+  def get_hash
+    @nasa_browse
+  end
 
+  def get_page_hash
+    @nasa_browse['page']
+  end 
 end
